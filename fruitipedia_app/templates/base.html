@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=\, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
+    <title>Fruitipedia</title>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <!-- Navigation -->
+        <a id="logo" href="{% url 'home page' %}">
+            <img id="logo-img" src="{% static 'images/logo.png' %}" alt="logo"/>
+        </a>
+
+        <nav>
+
+            <!-- If there is a user profile -->
+            {% if not hide_nav_links %}
+
+            <div class="user">
+                <a href="{% url 'dashboard page' %}">Dashboard</a>
+                <a href="{% url 'create fruit' %}">Add Fruit</a>
+                <a href="{% url 'details profile' %}">Profile</a>
+            </div>
+
+            {% else %}
+
+            <!-- If user profile has NOT been created -->
+            <div class="guest">
+
+                <a href="{% url 'create profile' %}">Create Profile</a>
+
+            {% endif %}
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+
+        </main>
+    </div>
+<!-- footer -->
+    <footer>
+      <p>@Fruitipedia - SoftUni Team 2023. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

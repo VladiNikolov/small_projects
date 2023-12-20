@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8"/>#}
+{#    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>#}
+{#    <meta name="viewport" content="width=\, initial-scale=1.0"/>#}
+{#    <link rel="stylesheet" href="/static/styles/styles.css"/>#}
+{#    <title>Fruitipedia</title>#}
+{#</head>#}
+{#<body>#}
+{#<div id="wrapper">#}
+{#    <header>#}
+{#        <!-- Navigation -->#}
+{#        <a id="logo" href="#">#}
+{#            <img id="logo-img" src="/static/images/logo.png" alt="logo"/>#}
+{#        </a>#}
+{##}
+{#        <nav>#}
+{##}
+{#            <!-- If there is a user profile -->#}
+{#            <div class="user">#}
+{#                <a href="#">Dashboard</a>#}
+{#                <a href="#">Add Fruit</a>#}
+{#                <a href="#">Profile</a>#}
+{#            </div>#}
+{##}
+{#            <!-- If no user profile has been created -->#}
+{#            <div class="guest">#}
+{##}
+{#                <a href="#">Create Profile</a>#}
+{##}
+{#            </div>#}
+{#        </nav>#}
+{#    </header>#}
+{##}
+{#    <main>#}
+
+        <section id="edit">
+
+            <div class="form">
+                <h1>Are you sure you want to delete your profile?</h1>
+                
+                <!-- Delete Profile Form -->
+                <form id='delete' class="register-form" method="post" action="{% url 'delete profile' %}">
+
+                    {% csrf_token %}
+
+                    <!-- Confirm Button -->
+                    <button type="submit">Yes</button>
+
+                </form>
+                <!-- End Delete Profile Form -->
+            </div>
+            
+        </section>
+{#    </main>#}
+{#</div>#}
+{#<!-- footer -->#}
+{#<footer>#}
+{#    <p>@Fruitipedia - SoftUni Team 2023. All rights reserved.</p>#}
+{#</footer>#}
+{#</body>#}
+{#</html>#}
+
+{% endblock %}

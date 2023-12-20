@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8"/>#}
+{#    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>#}
+{#    <meta name="viewport" content="width=\, initial-scale=1.0"/>#}
+{#    <link rel="stylesheet" href="/static/styles/styles.css"/>#}
+{#    <title>Fruitipedia</title>#}
+{#</head>#}
+{#<body>#}
+{#<div id="wrapper">#}
+{#    <header>#}
+{#        <!-- Navigation -->#}
+{#        <a id="logo" href="#">#}
+{#            <img id="logo-img" src="/static/images/logo.png" alt="logo"/>#}
+{#        </a>#}
+{##}
+{#        <nav>#}
+{##}
+{#            <!-- If there is a user profile -->#}
+{#            <div class="user">#}
+{#                <a href="#">Dashboard</a>#}
+{#                <a href="#">Add Fruit</a>#}
+{#                <a href="#">Profile</a>#}
+{#            </div>#}
+{##}
+{#            <!-- If user profile has NOT been created -->#}
+{#            <div class="guest">#}
+{##}
+{#                <a href="#">Create Profile</a>#}
+{##}
+{#            </div>#}
+{#        </nav>#}
+{#    </header>#}
+{##}
+{#    <main>#}
+
+        <!-- Delete Fruit Form -->
+        <section id="edit">
+            
+                <div class="form">
+                    <h2>Delete Fruit</h2>
+                    <form class="edit-form" method="post" action="{% url 'delete fruit' fruits.pk %}">
+
+                        {{ form }}
+                        {% csrf_token %}
+
+{#                        <label for="name">Name:</label>#}
+{#                        <input#}
+{#                                type="text"#}
+{#                                name="name"#}
+{#                                id="name"#}
+{#                                value="Pineapple"#}
+{#                                disabled="disabled" readonly="readonly" required=""#}
+{#                        />#}
+{#                        <label for="Fruit-image">Image URL:</label>#}
+{#                        <input#}
+{#                                type="url"#}
+{#                                name="imageUrl"#}
+{#                                id="Fruit-image"#}
+{#                                value="https://pineapple-fruit-image.jpeg"#}
+{#                                disabled="disabled" readonly="readonly" required=""#}
+{#                        />#}
+{#                        <label for="fruit-description">Description:</label>#}
+{#                        <textarea#}
+{#                                id="fruit-description"#}
+{#                                name="description"#}
+{#                                rows="10"#}
+{#                                cols="50"#}
+{#                                disabled="disabled" readonly="readonly" required=""#}
+{#                        >The pineapple is a tropical plant with an edible fruit. It is the most economically significant plant in the family Bromeliaceae. The pineapple is indigenous to South America. Pineapples grow as a small shrub, the individual flowers of the unpollinated plant fuse to form a multiple fruit. The plant is normally propagated from the offset produced at the top of the fruit, or from a side shoot, and typically matures within a year.</textarea>#}
+
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+           
+        </section>
+
+{#    </main>#}
+{#</div>#}
+{#<!-- footer -->#}
+{#<footer>#}
+{#    <p>@Fruitipedia - SoftUni Team 2023. All rights reserved.</p>#}
+{#</footer>#}
+{#</body>#}
+{#</html>#}
+
+{% endblock %}
