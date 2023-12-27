@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <link rel="stylesheet" type="text/css" href="/static/css/style.css">#}
+{#    <title>Expenses Tracker</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{##}
+{#<!-- Navigation Bar -->#}
+{#<nav>#}
+{#    <ul>#}
+{#        <li class="img"><img src="/static/images/dollar.png" alt="dollar"></li>#}
+{#        <li><a href="#">Expenses Tracker</a></li>#}
+{#        <li class="right"><a href="#">Profile</a></li>#}
+{#    </ul>#}
+{#</nav>#}
+<!-- End Navigation Bar -->
+
+<div class="body">
+    <h1>Edit Expense</h1>
+
+    <!-- Edit Expense Form -->
+    <div class="form">
+        <form method="POST" action="{% url 'edit expense' expense.pk %}">
+
+            {{ form }}
+            {% csrf_token %}
+
+{#            <label for="title">Title</label>#}
+{#            <input type="text" name="title" value="Electrical Piano" maxlength="50" required="" id="title">#}
+{##}
+{#            <label for="description">Description</label>#}
+{#            <textarea name="description" cols="40" rows="10" id="description"#}
+{#            >I bought myself a new piano to improve my skills</textarea>#}
+{##}
+{#            <label for="image_url">Link to Image</label>#}
+{#            <input type="url" name="image_url"#}
+{#                   value="https://www.pngkit.com/png/full/307-3075914_free-piano-clipart-piano-png.png" maxlength="200"#}
+{#                   required="" id="image_url">#}
+{##}
+{#            <label for="price">Price</label>#}
+{#            <input type="number" name="price" value="1000.0" step="any" required="" id="price">#}
+{#            <!-- Edit Button -->#}
+            <input type="submit" value="Edit">
+        </form>
+        <!-- End Edit Expense Form -->
+
+    </div>
+</div>
+
+{#<footer>#}
+{#    <div>Python Web Basics Exam Preparation @SoftUni</div>#}
+{#</footer>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+{% endblock %}
