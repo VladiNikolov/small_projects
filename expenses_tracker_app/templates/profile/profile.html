@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <link rel="stylesheet" type="text/css" href="/static/css/style.css">#}
+{#    <title>Expenses Tracker</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{##}
+{#<!-- Navigation Bar -->#}
+{#<nav>#}
+{#    <ul>#}
+{#        <li class="img"><img src="/static/images/dollar.png" alt="dollar"></li>#}
+{#        <li><a href="#">Expenses Tracker</a></li>#}
+{#        <li class="right"><a href="#">Profile</a></li>#}
+{#    </ul>#}
+{#</nav>#}
+<!-- End Navigation Bar -->
+
+<div class="body">
+    <!-- Your Profile Data -->
+    <h1>Your Profile</h1>
+    <div class="expenses-container">
+        <div class="expense-container">
+            <!-- Full Name -->
+            <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
+            <!-- Profile Image -->
+
+            {%  if profile %}
+
+            <img src="{{ profile.profile_image.url }}" alt="profile pic">
+
+            {% else %}
+
+            <img src="{% static 'images/user.png' %}" alt="profile pic">
+
+            {% endif %}
+            <!-- Profile Description -->
+            <!-- Total Items Bought -->
+            <p>Total Items Bought: {{ count_expenses }}</p>
+            <!-- Budget Left -->
+            <p>Budget Left: {{ budget_left|floatformat:2 }}$</p>
+            <div class="right">
+                <!-- Edit Profile Button -->
+                <a class="button edit" href="{% url 'edit profile' %}">Edit Profile</a>
+                <!-- Delete Profile Button -->
+                <a class="button delete" href="{% url 'delete profile' %}">Delete Profile</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Your Profile Data -->
+</div>
+
+
+{#<footer>#}
+{#    <div>Python Web Basics Exam Preparation @SoftUni</div>#}
+{#</footer>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+{% endblock %}
