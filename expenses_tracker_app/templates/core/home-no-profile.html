@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <link rel="stylesheet" type="text/css" href="/static/css/style.css">#}
+{#    <title>Expenses Tracker</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{##}
+{#<!-- Navigation Bar -->#}
+{#<nav>#}
+{#    <ul>#}
+{#        <li class="img"><img src="/static/images/dollar.png" alt="dollar"></li>#}
+{#        <li><a href="#">Expenses Tracker</a></li>#}
+{#    </ul>#}
+{#</nav>#}
+<!-- End Navigation Bar -->
+<div class="body">
+
+    <h1>Enter your data</h1>
+    <!-- Profile Create Form -->
+    <div class="form">
+        <form method="POST" action="{% url 'create_profile' %}" enctype="multipart/form-data">
+
+            {{ form }}
+            {% csrf_token %}
+
+{#            <label for="budget">Budget</label>#}
+{#            <input type="number" name="budget" required="" id="budget">#}
+{##}
+{#            <label for="firstName">First Name</label>#}
+{#            <input type="text" name="first_name" maxlength="15" required="" id="firstName">#}
+{##}
+{#            <label for="lastName">Last Name</label>#}
+{#            <input type="text" name="last_name" maxlength="15" required="" id="lastName">#}
+{##}
+{#            <label for="image">Profile Image:</label>#}
+{#            <input type="file" class="form-file" name="last_name" id="image">#}
+
+            <!-- Profile Create Button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <!-- End Profile Create Form -->
+</div>
+
+{#<footer>#}
+{#    <div>Python Web Basics Exam Preparation @SoftUni</div>#}
+{#</footer>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+{% endblock %}
