@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Expenses Tracker</title>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+
+
+<nav>
+    <ul>
+        <li class="img"><img src="{% static 'images/dollar.png' %}" alt="dollar"></li>
+
+        <li><a href="{% url 'home page' %}">Expenses Tracker</a></li>
+
+
+
+        {% if not hide_nav_links %}
+
+        <li class="right"><a href="{% url 'details profile' %}">Profile</a></li>
+
+        {%  endif %}
+
+
+    </ul>
+</nav>
+
+
+{% block content %}
+{% endblock %}
+
+
+<footer>
+    <div>Python Web Basics Exam Preparation @SoftUni</div>
+</footer>
+
+</body>
+</html>
