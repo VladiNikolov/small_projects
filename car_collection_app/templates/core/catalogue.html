@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{##}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <link rel="stylesheet" href="../static/style/style.css">#}
+{#    <title>CarCollection</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<div id="box">#}
+{#    <header>#}
+{#        <!-- Navigation Bar -->#}
+{#        <h1><a class="index-navigation" href="#"><span>C</span>ARS <span>C</span>OLLECTION</a></h1>#}
+{#        <nav>#}
+{#            <a href="#">Catalogue</a>#}
+{#            <a href="#">Create Car</a>#}
+{#            <a href="#">Profile</a>#}
+{#        </nav>#}
+{#    </header>#}
+
+    {% if not cars %}
+
+    <!-- Display paragraph: If there are no cars yet-->
+        <p class="no-articles">No cars yet</p>
+
+    {% else %}
+
+        <!-- Display div "car" with information about every car (if any)-->
+
+        <section id="catalogue">
+            <h1>Total cars: {{ cars|length }}</h1>
+
+
+            {% for car in cars %}
+
+                <!-- first car-->
+                <div class="car-card">
+                    <div class="image-wrap">
+                        <!-- car image -->
+                        <img src="{{ car.image_url }}"
+                             alt="Sport Car">
+                    </div>
+                    <!-- car type -->
+                    <h3>{{ car.type }}</h3>
+                    <!-- car model -->
+                    <h1>{{ car.model }}</h1>
+                    <div class="details-buttons">
+                        <!-- car details button -->
+                        <a href="{% url 'details car' car.pk   %}" class="details-btn">Details</a>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+{#                <!-- second car-->#}
+{#                <div class="car-card">#}
+{#                    <div class="image-wrap">#}
+{#                        <!-- car image -->#}
+{#                        <img src="https://www.autoinfluence.com/wp-content/uploads/2022/03/2022-Honda-CR-V-Hybrid-Touring-front.jpg"#}
+{#                             alt="Crossover">#}
+{#                    </div>#}
+{#                    <!-- car type -->#}
+{#                    <h3>Crossover</h3>#}
+{#                    <!-- car model -->#}
+{#                    <h1>2022 Honda CR-V</h1>#}
+{#                    <div class="details-buttons">#}
+{#                        <!-- car details button -->#}
+{#                        <a href="#" class="details-btn">Details</a>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <!-- third car-->#}
+{#                <div class="car-card">#}
+{#                    <div class="image-wrap">#}
+{#                        <!-- car image -->#}
+{#                        <img src="https://i.ytimg.com/vi/qx5OcAmx_sM/maxresdefault.jpg"#}
+{#                             alt="Minibus">#}
+{#                    </div>#}
+{#                    <!-- car type -->#}
+{#                    <h3>Minibus</h3>#}
+{#                    <!-- car model -->#}
+{#                    <h1>ford transit l2h2 </h1>#}
+{#                    <div class="details-buttons">#}
+{#                        <!-- car details button -->#}
+{#                        <a href="#" class="details-btn">Details</a>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#            <div class="car-card">#}
+{#                    <div class="image-wrap">#}
+{#                        <!-- car image -->#}
+{#                        <img src="https://i.ytimg.com/vi/qx5OcAmx_sM/maxresdefault.jpg"#}
+{#                             alt="Minibus">#}
+{#                    </div>#}
+{#                    <!-- car type -->#}
+{#                    <h3>Minibus</h3>#}
+{#                    <!-- car model -->#}
+{#                    <h1>ford transit l2h2 </h1>#}
+{#                    <div class="details-buttons">#}
+{#                        <!-- car details button -->#}
+{#                        <a href="#" class="details-btn">Details</a>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#        </section>#}
+
+
+{#    <!-- footer -->#}
+{#    <footer>#}
+{#        &copy;SoftUni Team 2022. All rights reserved.#}
+{#    </footer>#}
+{#</div>#}
+{#</body>#}
+{#</html>#}
+
+{% endblock %}
