@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load Static -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <title>Eventer App</title>
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- Navigation Bar section -->
+    <header>
+
+        <!-- A logo in the top left corner that serves as a link to the Home Page -->
+        <a id="logo" href="{% url 'home page' %}"
+        ><img id="logo-img" src="{% static 'images/logo.png' %}" alt="logo"
+        /></a>
+
+        <nav>
+
+            <!-- If the user has not created a profile yet -->
+
+            {% if not profile %}
+
+            <div class="guest">
+                <a href="{% url 'create profile' %}">Create Profile</a>
+            </div>
+
+            {% else %}
+
+            <!-- If the user has created a profile -->
+            <div class="user">
+                <a href="{% url 'dashboard page' %}">Events</a>
+                <a href="{% url 'create event' %}">Add Event</a>
+                <a href="{% url 'details profile' %}">Profile</a>
+            </div>
+
+            {% endif %}
+
+        </nav>
+    </header>
+    <!-- End Navigation Bar section -->
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Main Content -->
+
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy;SoftUni Team 2023 All rights reserved.</p>
+    </footer>
+    <!-- End Footer section -->
+</div>
+</body>
+</html>
