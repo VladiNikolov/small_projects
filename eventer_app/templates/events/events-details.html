@@ -1,0 +1,42 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+
+<!-- The Main Content for the Details Event section -->
+<section id="details">
+    <!-- Title of the Page -->
+    <h2>Event Details</h2>
+    <div id="details-wrapper">
+
+        <!-- Event Image -->
+        <img id="details-img" class="event-image" src="{{ event.event_image }}"
+             alt={{ event.event_name }}/>
+
+        <!-- Event Name -->
+        <p id="details-title">{{ event.event_name }}</p>
+
+        <!-- Event Category -->
+        <p id="details-event">
+            Category: <span id="categories">{{ event.category }}</span>
+        </p>
+
+        <!-- Event Date -->
+        <p id="details-event">
+            Date: <span id="date">{{ event.date }}</span></p>
+
+        <!-- Event Description -->
+        <div id="info">
+            <div id="details-description">{{ event.description }}
+            </div>
+
+        </div>
+
+        <!-- Edit and Delete buttons -->
+        <div id="action-buttons">
+            <a href="{% url 'edit event' event.pk %}" id="edit-btn">Edit</a>
+            <a href="{% url 'delete event' event.pk %}" id="delete-btn">Delete</a>
+        </div>
+    </div>
+</section>
+<!-- End Details Event section -->
+
+{% endblock %}
