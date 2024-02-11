@@ -1,0 +1,53 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+
+<!-- The Main Content for the Create Profile section -->
+<section id="login">
+    <div class="form">
+        <!-- Title of the Page -->
+        <h2>Create Profile</h2>
+
+        <!-- Create Profile/Login Form -->
+        <form class="login-form" method="post" action="{% url 'create profile' %}">
+
+
+            {{ form }}
+            {% csrf_token %}
+
+{#            <!-- Email Field -->#}
+{#            <label for="email">Email:</label>#}
+{#            <input#}
+{#                    type="text"#}
+{#                    name="email"#}
+{#                    maxlength="45"#}
+{#                    id="email"#}
+{#            />#}
+{##}
+{#            <!-- Profile Picture Field -->#}
+{#            <label for="profile_picture">Profile Picture:</label>#}
+{#            <input#}
+{#                    type="url"#}
+{#                    name="profile_picture"#}
+{#                    id="profile_picture"#}
+{#            />#}
+{##}
+{#            <!-- Password Field -->#}
+{#            <label for="password">Password:</label>#}
+{#            <input#}
+{#                    type="password"#}
+{#                    name="password"#}
+{#                    id="password"#}
+{#                    minlength="5"#}
+{#                    maxlength="20"#}
+{#            />#}
+
+            <!-- Submit Button -->
+            <input class="btn submit" type="submit" value="Submit">
+
+        </form>
+        <!-- End Create Profile/Login Form -->
+    </div>
+</section>
+<!-- End Create Profile section -->
+
+{% endblock %}
