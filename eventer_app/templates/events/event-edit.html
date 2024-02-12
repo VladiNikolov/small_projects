@@ -1,0 +1,76 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+
+<!-- The Main Content for the Edit Event section -->
+<section id="edit">
+    <div class="form">
+        <!-- Title of the Page -->
+        <h2>Edit Event</h2>
+
+        <!-- Edit Event Form -->
+        <form class="edit-form" method="post" action="{% url 'edit event' event.pk %}">
+
+            {{ form }}
+            {% csrf_token %}
+
+{#            <!-- Event Name Field -->#}
+{#            <label for="name">Name:</label>#}
+{#            <input#}
+{#                    type="text"#}
+{#                    name="name"#}
+{#                    id="event-name"#}
+{#                    minlength="2"#}
+{#                    maxlength="30"#}
+{#                    required=""#}
+{#                    value="Robert De Niro Themed Party"#}
+{#            />#}
+{##}
+{#            <!-- Event Category Field -->#}
+{#            <label for="category">Category:</label>#}
+{#            <select id="event-category" name="category">#}
+{#                <option value="1">Theme Party</option>#}
+{#                <option value="2">Sports</option>#}
+{#                <option value="3">Festivals</option>#}
+{#                <option value="4">Conferences</option>#}
+{#                <option value="5">Performing Art</option>#}
+{#                <option value="6">Concerts</option>#}
+{#                <option value="8">Other</option>#}
+{#            </select>#}
+{##}
+{#            <!-- Event Description Field -->#}
+{#            <label for="description">Description:</label>#}
+{#            <textarea#}
+{#                    id="event-description"#}
+{#                    name="description"#}
+{#            >Welcome to the ultimate Robert De Niro themed party! If you're a fan of this legendary actor's films and characters, then this is the party for you.#}
+{#                  Entertainment can include a De Niro movie trivia game, a dance-off to classic songs from his films, and even an impression contest where guests can try their best De Niro impressions.#}
+{#                  End the night with a screening of one of De Niro's greatest films, followed by a toast to the man himself. Your guests will be talking about this unforgettable party for years to come!</textarea>#}
+{##}
+{#            <!-- Event Date Field -->#}
+{#            <label for="date">Date:</label>#}
+{#            <input#}
+{#                    type="text"#}
+{#                    name="date"#}
+{#                    id="event-date"#}
+{#                    value="15.04.2023"#}
+{#            />#}
+{##}
+{#            <!-- Event Image Field -->#}
+{#            <label for="time">Event Image:</label>#}
+{#            <input#}
+{#                    type="text"#}
+{#                    name="imageUrl"#}
+{#                    id="event-image"#}
+{#                    value="https://www.google.com/imgres?imgurl=https%3A%2F%2Ftribecafilm-production.s3.amazonaws.com%2Fuploads%2Farticle%2Fheader_marquee%2F2336%2Flarge_deniroparty_marquee.jpg&tbnid=xPCtRr9IrM97MM&vet=12ahUKEwjwpoWBhN__AhWWk6QKHXUrCpwQMygAegUIARC7AQ..i&imgrefurl=https%3A%2F%2Ftribecafilm.com%2Fnews%2Fneighbors-trailer-robert-de-niro-zac-efron-dave-franco&docid=pQdYhc_ad0pEEM&w=980&h=551&q=Robert%20De%20Niro%20Themed%20Party&ved=2ahUKEwjwpoWBhN__AhWWk6QKHXUrCpwQMygAegUIARC7AQ"#}
+{#            />#}
+
+            <!-- Edit Button -->
+            <input class="btn" type="submit" value="Edit">
+
+        </form>
+        <!-- End Edit Event Form -->
+    </div>
+</section>
+<!-- End Edit Event section -->
+
+{% endblock %}
