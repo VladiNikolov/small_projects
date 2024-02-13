@@ -1,0 +1,73 @@
+{% extends 'shared/base.html' %}
+{%  block content %}
+
+<!-- The Main Content for the Create Event section -->
+<section id="create">
+    <div class="form">
+        <!-- Title of the Page -->
+        <h2>Create Event</h2>
+
+        <!-- Create Event Form -->
+        <form class="create-form" method="post" action="{%  url 'create event' %}">
+
+            {{ form }}
+            {% csrf_token %}
+
+{#            <!-- Event Name Field -->#}
+{#            <label for="name">Name:</label>#}
+{#            <input#}
+{#                    type="text"#}
+{#                    name="name"#}
+{#                    id="event-name"#}
+{#                    minlength="2"#}
+{#                    maxlength="30"#}
+{#                    required=""#}
+{#            />#}
+{##}
+{#            <!-- Event Category Field -->#}
+{#            <label for="category">Category:</label>#}
+{#            <select id="event-category" name="category">#}
+{#                <option value="1">-------</option>#}
+{#                <option value="2">Sports</option>#}
+{#                <option value="3">Festivals</option>#}
+{#                <option value="4">Conferences</option>#}
+{#                <option value="5">Performing Art</option>#}
+{#                <option value="6">Concerts</option>#}
+{#                <option value="7">Theme Party</option>#}
+{#                <option value="8">Other</option>#}
+{#            </select>#}
+{##}
+{#            <!-- Event Description Field -->#}
+{#            <label for="description">Description:</label>#}
+{#            <textarea#}
+{#                    id="event-description"#}
+{#                    name="description"#}
+{#            ></textarea>#}
+{##}
+{#            <!-- Event Date Field -->#}
+{#            <label for="date">Date:</label>#}
+{#            <input#}
+{#                    type="text"#}
+{#                    name="date"#}
+{#                    id="event-date"#}
+{#            />#}
+{##}
+{#            <!-- Event Image Field -->#}
+{#            <label for="time">Event Image:</label>#}
+{#            <input#}
+{#                    type="text"#}
+{#                    name="imageUrl"#}
+{#                    id="event-image"#}
+{#            />#}
+
+            <!-- Create Button -->
+            <input class="btn" type="submit" value="Create">
+
+        </form>
+        <!-- End Create Event Form -->
+    </div>
+</section>
+<!-- End Create Event section -->
+
+{% endblock %}
+
