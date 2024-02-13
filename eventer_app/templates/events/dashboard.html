@@ -1,0 +1,88 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+
+<!-- Title of the Page -->
+<h2>Current Events</h2>
+
+<!-- The Main Content for the Dashboard Event section -->
+<section id="dashboard">
+
+    {% if not events %}
+
+    <!-- Display paragraph: If there are no events yet -->
+    <h4>There are no Events in the Dashboard!</h4>
+
+    {% else %}
+
+    <!-- Display a <div> with information about every post (if any)-->
+
+    <!-- First Card-Box in dashboard -->
+    <div class="event">
+        <!-- Event Image -->
+
+        {% for event in events %}
+
+                <img src="{{ event.event_image }}" alt=""/>
+
+                <!-- Event Name -->
+                <div class="event-details">
+                    <p class="title">
+                        {{ event.event_name }}
+                    </p>
+
+                    <!-- Event Date -->
+                    <p class="date">{{ event.date }}</p>
+                </div>
+
+
+
+                <!-- Details Button -->
+                <a class="details-btn" href="{% url 'details event' event.pk %}">Details</a>
+            </div>
+
+        {% endfor %}
+
+
+    {% endif %}
+
+{#    <!-- Second Card-Box in dashboard -->#}
+{#    <div class="event">#}
+{#        <!-- Event Image -->#}
+{#        <img src="/static/images/fun_run.jpg" alt="Fun Run Image"/>#}
+{##}
+{#        <!-- Event Name -->#}
+{#        <div class="event-details">#}
+{#            <p class="title">#}
+{#                Fun Run#}
+{#            </p>#}
+{##}
+{#            <!-- Event Date -->#}
+{#            <p class="date">19.04.2023</p>#}
+{#        </div>#}
+{##}
+{#        <!-- Details Button -->#}
+{#        <a class="details-btn" href="#">Details</a>#}
+{#    </div>#}
+{##}
+{#    <!-- Third Card-Box in dashboard -->#}
+{#    <div class="event">#}
+{#        <!-- Event Image -->#}
+{#        <img src="/static/images/art_and_wine.jpg" alt="Art & Wine Image"/>#}
+{##}
+{#        <!-- Event Name -->#}
+{#        <div class="event-details">#}
+{#            <p class="title">#}
+{#                Art & Wine#}
+{#            </p>#}
+{##}
+{#            <!-- Event Date -->#}
+{#            <p class="date">17.04.2023</p>#}
+{#        </div>#}
+
+        <!-- Details Button -->
+{#        <a class="details-btn" href="#">Details</a>#}
+{#    </div>#}
+{#</section>#}
+<!-- End Dashboard Event section -->
+
+{% endblock %}
