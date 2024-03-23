@@ -11,7 +11,7 @@ pairs = [
     ],
     [
         r"what is the phone number of the SoftUni(.*)?",
-        ["Телефон: +359899 55 55 90"]
+        ["Телефон: +359899 55 55 92"]
     ],
     [
         r"what is python(.*) ?",
