@@ -11,7 +11,7 @@ pairs = [
     ],
     [
         r"what is the phone number of the SoftUni(.*)?",
-        ["Телефон: +359899 55 55 92"]
+        ["Телефон: +359899 55 55 90"]
     ],
     [
         r"what is python(.*) ?",
@@ -35,7 +35,7 @@ pairs = [
     ],
     [
         r"quit",
-        ["Bye for now. See you soon :)", "It was nice talking to you. See you soon :)"]
+        ["Bye for now. See you soon:)", "It was nice talking to you. See you soon :)"]
     ],
     [
         r"(.*)",
