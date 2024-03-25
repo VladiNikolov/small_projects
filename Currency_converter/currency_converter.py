@@ -39,7 +39,7 @@
 from js import document,alert
 
 def euro_converter(value):
-    return f'{int(value) / 1.95:.2f}'
+    return f'{int(value) / 1.95583:.2f}'
 
 def pound_converter(value):
     return f'{int(value) / 2.30:.2f}'
