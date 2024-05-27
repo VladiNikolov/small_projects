@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+      <!-- delete car form -->
+      <section id="delete-page" class="auth">
+        <form id="delete" method="post" >
+          <div class="container">
+            <h1>Delete Car</h1>
+
+              {{ form }}
+              {% csrf_token %}
+
+            <input class="btn submit" type="submit" value="Delete Car" />
+          </div>
+        </form>
+      </section>
+
+{% endblock %}
